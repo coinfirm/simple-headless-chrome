@@ -48,13 +48,13 @@ module.exports.launch = function () {
             };
 
 
-            if (headless) {
+            if (headless && chromeOptions.chromeFlags.indexOf('--headless') === -1) {
               chromeOptions.chromeFlags.push('--headless');
             }
-            if (options.disableGPU) {
+            if (options.disableGPU && chromeOptions.chromeFlags.indexOf('--disable-gpu') === -1) {
               chromeOptions.chromeFlags.push('--disable-gpu');
             }
-            if (options.noSandbox) {
+            if (options.noSandbox && chromeOptions.chromeFlags.indexOf('--no-sandbox') === -1) {
               chromeOptions.chromeFlags.push('--no-sandbox');
             }
 
